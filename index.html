@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>OMGITSPHOTOS</title>
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+        <!-- api gateway generated sdk -->
+        <script src="https://sdk.amazonaws.com/js/aws-sdk-2.879.0.min.js"></script>
+        <script src="./apiGateway-js-sdk/lib/axios/dist/axios.standalone.js"></script>
+        <script src="./apiGateway-js-sdk/lib/CryptoJS/rollups/hmac-sha256.js"></script>
+        <script src="./apiGateway-js-sdk/lib/CryptoJS/rollups/sha256.js"></script>
+        <script src="./apiGateway-js-sdk/lib/CryptoJS/components/hmac.js"></script>
+        <script src="./apiGateway-js-sdk/lib/CryptoJS/components/enc-base64.js"></script>
+        <script src="./apiGateway-js-sdk/lib/url-template/url-template.js"></script>
+        <script src="./apiGateway-js-sdk/lib/apiGatewayCore/sigV4Client.js"></script>
+        <script src="./apiGateway-js-sdk/lib/apiGatewayCore/apiGatewayClient.js"></script>
+        <script src="./apiGateway-js-sdk/lib/apiGatewayCore/simpleHttpClient.js"></script>
+        <script src="./apiGateway-js-sdk/lib/apiGatewayCore/utils.js"></script>
+    
+        <script src="./apiGateway-js-sdk/apigClient.js"></script>    
+        <script src="./apiGateway-js-sdk/index.js"></script>
+        <center>
+            <header>
+                <a class="logo">OMGITSPHOTOS</a>
+            </header>
+        </center>
+    </head>
+    
+    <body>
+
+        <div class='hero-img'></div>
+
+        <div class="uploadarea">
+            <h1 class="title">upload</h1>
+            <center>
+                <form action="/action_page.php">
+                    <input type="file" id="uploaded_file" name="filename" style="back">
+                    <input type="text" id="custom_labels" name="labels" placeholder="add labels" >
+                </form>
+                <button id="upload_files" onclick="uploadPhoto()" >upload</button>
+            </center>
+        </div>
+
+
+        <div class="searcharea">
+            <h1 class="title">search</h1>
+            <center>
+                <form action="", method="get", target="", id="search_photos">
+                    <input name="search_query" id = "search_query" type="text" placeholder="search" autocomplete="off" autofocus>
+                    <button type="button">
+                        <i id="mic_search" onclick="voiceSearch()">mic</i>
+                    </button>
+                </form>
+                <div class="searchbutton">
+                    <button type="button" id="searchPhotos" name="searchPhotos" onclick="textSearch()">
+                        search
+                    </button>
+                </div>
+            </center>
+        </div>
+
+
+
+        <div class="searchresults">
+            <div id="photos_search_results">
+            </div>
+        </div>
+
+    </body>
+</html>

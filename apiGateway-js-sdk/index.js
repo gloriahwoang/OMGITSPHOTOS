@@ -120,55 +120,28 @@ function uploadPhoto() {
     console.log(fileName);
     console.log(custom_labels.value);
 
-    var reader = new FileReader();
+    // var reader = new FileReader();
     var file = document.getElementById('uploaded_file').files[0];
-    fileExt = file.name.split(".").pop();
+    file.constructor = () => file;
+
+    // fileExt = file.name.split(".").pop();
     console.log('File : ', file);
-    document.getElementById('uploaded_file').value = "";
+    // document.getElementById('uploaded_file').value = "";
 
     if ((filePath == "") || (!['png', 'jpg', 'jpeg'].includes(filePath.toString().split(".")[1]))) {
         alert("Please upload a png, jpg, or jpeg file!!!");
     } else {
 
         var params = {
-            "item": fileName,
+            "item": file.name,
             "photo": 'asm2',
-            "Content-Type": "image/*",
+            "Content-Type": file.type,
             "x-amz-meta-customLabels": custom_labels.value
         };
         var additionalParams = {
-            // headers: {
-            //     "x-amz-meta-customLabels": custom_labels.value
-            // }
+            
         };
+        apigClient.uploadPhotoItemPut(params, file, additionalParams)
         
-        reader.onload = function (event) {
-            var body = event.target.result;    
-            var newImage = document.createElement("img");
-            newImage.body = body;
-            encoded = newImage.outerHTML;
-
-            last_index_quote = encoded.lastIndexOf('"');
-            
-            
-            if (fileExt == 'jpg' || fileExt == 'jpeg' || fileExt == 'png') {
-              encodedStr = encoded.substring(33, last_index_quote);
-            }
-            else {
-              encodedStr = encoded.substring(32, last_index_quote);
-            }
-
-            // var body = encodeURIComponent(event.target.result);
-            console.log('Reader body : ', encodedStr); 
-            // sourceImage =  encodeURIComponent(body)
-            return apigClient.uploadPhotoItemPut(params, encodedStr, additionalParams)
-            .then(function(result) {
-                console.log(result);
-            })
-            .catch(function(error) {
-                console.log(error);
-            })
-        }
-        reader.readAsDataURL(file);
     }
 }

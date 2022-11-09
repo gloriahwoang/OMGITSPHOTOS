@@ -1,0 +1,44 @@
+AWSTemplateFormatVersion: 2010-09-09
+Transform: 'AWS::Serverless-2016-10-31'
+Description: OMGITSPHOTOS Lambdas
+Resources:
+    LF1-index:
+		Type: 'AWS::Serverless::Function'
+		Properties:
+            Handler: LF1-Index-Photos.lambda_handler
+            Runtime: python3.7
+            CodeUri: ../Lambda
+            Description: LF1 for indexing photos
+            MemorySize: 128
+            Timeout: 30
+            Role: arn:aws:iam::653496211370:role/LambdaASM2
+			Events:
+                ApiEvent:
+                    Type: Api
+                    Properties:
+                        RestApiId: utsijelpni
+                        Path: /upload
+                        Method: put
+            Environments:
+				Variables:
+                    REGION: us-east-1
+    LF2-search:
+        Type: 'AWS::Serverless::Function'
+		Properties:
+            Handler: LF2-Search-Photos.lambda_handler
+            Runtime: python3.7
+            CodeUri: ../Lambda
+            Description: LF2 for searching photos
+            MemorySize: 128
+            Timeout: 30
+            Role: arn:aws:iam::653496211370:role/LambdaASM2
+			Events:
+                ApiEvent:
+                    Type: Api
+                    Properties:
+                        RestApiId: utsijelpni
+                        Path: /search
+                        Method: get
+            Environments:
+				Variables:
+                    REGION: us-east-1

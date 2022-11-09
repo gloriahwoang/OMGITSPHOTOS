@@ -1,0 +1,122 @@
+html {
+    background-color: #BBF6E5;
+}
+
+body {
+    margin: 6em;
+    font-family: 'Poppins', sans-serif;
+    color: #1A445B ;
+    font-size:small;
+    font-weight: 500;
+}
+
+a {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-weight:bolder;
+    color:#1A445B;
+    margin-bottom: 12em;
+}
+
+.hero-img {
+    position:absolute;
+    top:6em;
+    left:0;
+    right:0;
+    background-image: url('../assets/pixels.png');
+    background-size:cover;
+    background-repeat: no-repeat;
+    width:100vw;
+    height:100vh;
+    z-index: -1;
+    opacity:30%;
+    overflow:hidden;
+}
+
+.searcharea {
+    padding: 10px 250px;
+}
+
+.uploadarea {
+    padding: 40px 250px;
+}
+
+#search_photos {
+    width: 65%;
+    position:relative;
+    padding: 10px 50px;
+}
+
+.mic{
+    width:80%;
+    margin-right: -3em;
+    height:auto;
+    margin-top: 0.5em;
+    position:relative;
+}
+
+#uploaded_file {
+    width: 50%;
+    font-size: small;
+    font-family: 'Poppins';
+    padding: 10px 15px;
+    font-weight:700;
+    color: #1A445B;
+    margin-bottom: 0.5em;
+}
+
+#custom_labels {
+    width: 50%;
+    font-size: large;
+    font-family: 'Poppins';
+    padding: 6px 10px;
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    color: #70FFCB;
+    margin-bottom: 1.5em;
+}
+
+#search_photos input {
+    width: 100%;
+    font-size: large;
+    font-family: 'Poppins';
+    padding: 10px 15px;
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    color: #70FFCB;
+}
+
+#search_photos button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    width: 3rem;
+    text-align: center;
+    font-size: 1.75rem;
+    cursor: pointer;
+    color: #70FFCB;
+}
+
+.searchbutton{
+    padding: 20px 10px;
+}
+
+@media (max-width: 1200px) {
+    #search_photos {
+        width: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .searcharea {
+        padding: 30px 35px;
+    }
+
+    #search_photos {
+        width: 100%;
+    }
+}

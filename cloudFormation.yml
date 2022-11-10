@@ -173,6 +173,9 @@ Resources:
   OpenSearch:
     Type: "AWS::OpenSearchService::Domain"
     Properties:
+      AdvancedSecurityOptions:
+        Enabled: Boolean
+        InternalUserDatabaseEnabled: Boolean
       DomainName: 'photos-asm2'
       ClusterConfig:
         InstanceCount: '1'

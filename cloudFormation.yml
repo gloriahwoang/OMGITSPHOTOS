@@ -180,8 +180,8 @@ Resources:
     Type: "AWS::OpenSearchService::Domain"
     Properties:
       DomainName: 'photos-asm2'
-      ElasticsearchVersion: '7.10'
-      ElasticsearchClusterConfig:
+      ClusterConfig:
+        InstanceCount: '1'
         InstanceType: 't3.small.search'
       EBSOptions:
         EBSEnabled: true
@@ -191,8 +191,7 @@ Resources:
       AccessPolicies:
         Version: '2012-10-17'
         Statement:
-          -
-            Effect: 'Allow'
+          - Effect: Allow
             Principal:
               AWS: '*'
             Action: 'es:*'

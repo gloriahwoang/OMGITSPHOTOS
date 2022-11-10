@@ -185,7 +185,7 @@ Resources:
         Enabled: true
       DomainEndpointOptions: 
         EnforceHTTPS : true
-      DomainName: 'photos-asm2'
+      DomainName: 'photos-asm2-os'
       ClusterConfig:
         InstanceCount: '1'
         InstanceType: 't3.small.search'

@@ -178,6 +178,8 @@ Resources:
         InternalUserDatabaseEnabled: true
       NodeToNodeEncryptionOptions: 
         Enabled: true
+      EncryptionAtRestOptions:
+        Enabled: true
       DomainName: 'photos-asm2'
       ClusterConfig:
         InstanceCount: '1'

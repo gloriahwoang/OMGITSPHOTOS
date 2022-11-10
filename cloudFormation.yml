@@ -178,7 +178,7 @@ Resources:
         InternalUserDatabaseEnabled: true
         MasterUserOptions: 
           MasterUserName: admin
-          MasterUserPassword: admin1234!
+          MasterUserPassword: Admin1234!
       NodeToNodeEncryptionOptions: 
         Enabled: true
       EncryptionAtRestOptions:

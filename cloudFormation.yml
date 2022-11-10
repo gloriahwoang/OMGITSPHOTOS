@@ -61,6 +61,11 @@ Resources:
 
   S3Frontend:
     Type: "AWS::S3::Bucket"
+    Properties:
+      AccessControl: PublicRead
+      WebsiteConfiguration:
+        IndexDocument: index.html
+
 
   LambdasPipeline:
     Type: "AWS::CodePipeline::Pipeline"

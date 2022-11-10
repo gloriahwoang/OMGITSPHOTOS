@@ -25,7 +25,7 @@ Resources:
           Type: S3
           Properties:
             Bucket:
-              Ref: asm2
+              Ref: s3forPhoto
             Events: s3:ObjectCreated:Put
       Environment:
         Variables:

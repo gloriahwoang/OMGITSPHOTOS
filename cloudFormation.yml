@@ -58,9 +58,15 @@ Resources:
 
   S3ForArtifact:
     Type: "AWS::S3::Bucket"
+    DeletionPolicy: Retain
+    Properties:
+      BucketName: s3forArtifacts
 
   S3Frontend:
     Type: "AWS::S3::Bucket"
+    DeletionPolicy: Retain
+    Properties:
+      BucketName: s3frontEnd
 
   LambdasPipeline:
     Type: "AWS::CodePipeline::Pipeline"
@@ -173,12 +179,27 @@ Resources:
   OpenSearch:
     Type: "AWS::OpenSearchService::Domain"
     Properties:
-      DomainName: "photos"
+      DomainName:
+        Ref: photos-asm2
+      EngineVersion:
+        Ref: EngineVersion
+      ClusterConfig:
+        InstanceCount: '1'
+        InstanceType:
+          Ref: InstanceType
+      EBSOptions:
+        EBSEnabled: true
+        Iops: '0'
+        VolumeSize: '10'
+        VolumeType: 'standard'
       AccessPolicies:
-        Version: "2012-10-17"
+        Version: '2012-10-17'
         Statement:
-          - Effect: "Allow"
+          - Effect: Deny
             Principal:
-              AWS: "*"
-            Action: "es:*"
-            Resource: "arn:aws:es:us-east-1:653496211370:domain/photos/*"
+              AWS: '*'
+            Action: 'es:*'
+            Resource: '*'
+      AdvancedOptions:
+        rest.action.multi.allow_explicit_index: true
+        override_main_response_version: true

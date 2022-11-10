@@ -179,18 +179,12 @@ Resources:
   OpenSearch:
     Type: "AWS::OpenSearchService::Domain"
     Properties:
-      DomainName:
-        Ref: photos-asm2
-      EBSOptions:
-        EBSEnabled: true
-        Iops: '0'
-        VolumeSize: '10'
-        VolumeType: 'standard'
+      DomainName: "photos-asm2"
       AccessPolicies:
-        Version: '2012-10-17'
+        Version: "2012-10-17"
         Statement:
-          - Effect: Deny
+          - Effect: "Allow"
             Principal:
-              AWS: '*'
-            Action: 'es:*'
-            Resource: '*'
+              AWS: "*"
+            Action: "es:*"
+            Resource: "arn:aws:es:us-east-1:653496211370:domain/photos/*"

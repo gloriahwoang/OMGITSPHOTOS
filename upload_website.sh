@@ -22,4 +22,4 @@ S3_BUCKET=''
      S3_BUCKET="$1"
  fi
 
-aws s3 cp .. "s3://$S3_BUCKET" --recursive --exclude "*.yaml"
+aws s3 cp . "s3://$S3_BUCKET" --recursive --exclude "*.yaml"

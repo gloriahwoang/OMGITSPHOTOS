@@ -33,6 +33,38 @@ Parameters:
     Default: "gloriahwoang"
 
 Resources:
+
+  Lambda:
+    Type: AWS::Lambda::Function
+    Properties:
+      Handler: LF1-Index-Photos.lambda_handler
+      Role: arn:aws:iam::653496211370:role/LambdaASM2
+      Code:
+        S3Bucket: lambdas-cloudformation
+        S3Key: LF1-Index-Photos.zip
+      Runtime: python3.7
+      Timeout: 60
+      TracingConfig:
+        Mode: Active
+  
+  NewAPI:
+    Type : AWS::ApiGateway::RestApi
+    Properties :
+            Body :
+                swagger : 2.0
+                info :
+                    version : 0.0.1
+                    title : newapi
+                basePath : /search
+                schemes :
+                    - https
+                definitions:
+                    Empty :
+                        type : object
+            Name : mynewapi
+            Parameters:
+                endpointConfigurationTypes: REGIONAL
+    
   AdminRole:
     Type: "AWS::IAM::Role"
     Properties:

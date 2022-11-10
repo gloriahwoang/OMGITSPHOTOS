@@ -20,7 +20,7 @@ def FindPhotofromOpenSearch(labels):
     # credentials = boto3.Session().get_credentials()
     # awsauth = AWS4Auth(credentials.access_key, credentials.secret_key, region, service, session_token=credentials.token)
     
-    host = 'https://search-photos-ehe7ivwsbhcxod3b27bmz763ti.us-east-1.es.amazonaws.com'
+    host = 'https://search-photos-asm2-os-iswjhfjoafsp3olf5hilz54miu.us-east-1.es.amazonaws.com'
     index = 'photos'
     url = host + '/' + index + '/_search'
     print('step1')
@@ -39,7 +39,7 @@ def FindPhotofromOpenSearch(labels):
         }
         print('step2 query: ', query)
         
-        response = requests.get(url, data=json.dumps(query), auth = ('asm2master','Asm2master!'), headers=headers)
+        response = requests.get(url, data=json.dumps(query), auth = ('admin','Admin1234!'), headers=headers)
         print('step3 response: ', response)
         res = response.json()
         print('step4 res: ', res)

@@ -53,7 +53,7 @@ def json_append(photo_label, custom_label, photo, bucket):
     
     print('Start Uploading Json!')
     
-    url = 'https://search-photos-ehe7ivwsbhcxod3b27bmz763ti.us-east-1.es.amazonaws.com/photos/photos'
+    url = 'https://search-photos-asm2-os-iswjhfjoafsp3olf5hilz54miu.us-east-1.es.amazonaws.com/photos/photos'
     headers = {"Content-Type": "application/json"}
     
     body = {
@@ -63,7 +63,7 @@ def json_append(photo_label, custom_label, photo, bucket):
         "labels": photo_label + custom_label
     }
     
-    r = requests.post(url, data=json.dumps(body), auth = ('asm2master','Asm2master!'), headers=headers)
+    r = requests.post(url, data=json.dumps(body), auth = ('admin','Admin1234!'), headers=headers)
     
     print('Json Uploading Done:')
 

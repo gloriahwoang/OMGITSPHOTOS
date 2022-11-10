@@ -180,6 +180,8 @@ Resources:
         Enabled: true
       EncryptionAtRestOptions:
         Enabled: true
+      DomainEndpointOptions: 
+        EnforceHTTPS : true
       DomainName: 'photos-asm2'
       ClusterConfig:
         InstanceCount: '1'

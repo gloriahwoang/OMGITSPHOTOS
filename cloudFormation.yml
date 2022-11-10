@@ -176,9 +176,9 @@ Resources:
       AdvancedSecurityOptions:
         Enabled: true
         InternalUserDatabaseEnabled: true
-          MasterUserOptions: 
-              MasterUserName: admin
-              MasterUserPassword: admin
+        MasterUserOptions: 
+          MasterUserName: admin
+          MasterUserPassword: admin
       NodeToNodeEncryptionOptions: 
         Enabled: true
       EncryptionAtRestOptions:

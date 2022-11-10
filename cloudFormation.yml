@@ -66,7 +66,7 @@ Resources:
     Type: "AWS::S3::Bucket"
     DeletionPolicy: Retain
     Properties:
-      BucketName: s3frontend
+      BucketName: front-end
 
   LambdasPipeline:
     Type: "AWS::CodePipeline::Pipeline"

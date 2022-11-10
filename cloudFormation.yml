@@ -58,15 +58,9 @@ Resources:
 
   S3ForArtifact:
     Type: "AWS::S3::Bucket"
-    DeletionPolicy: Retain
-    Properties:
-      BucketName: s3forartifacts
 
   S3Frontend:
     Type: "AWS::S3::Bucket"
-    DeletionPolicy: Retain
-    Properties:
-      BucketName: front-end
 
   LambdasPipeline:
     Type: "AWS::CodePipeline::Pipeline"

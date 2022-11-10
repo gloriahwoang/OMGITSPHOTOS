@@ -4,7 +4,7 @@ Description: OMGITSPHOTOS Lambdas
 Resources:
   s3forPhoto:
     Type: AWS::S3::Bucket
-    Properties:s
+    Properties:
       BucketName: asm2
   LF1-indexPhotos:
     Type: 'AWS::Serverless::Function'

@@ -1,34 +1,34 @@
 AWSTemplateFormatVersion: 2010-09-09
 Parameters:
-  S3GHRepo:
+  FrontEndGHRepo:
     Type: String
     Default: "OMGITSPHOTOS"
 
-  S3GHBranch:
+  FrontEndGHBranch:
     Type: String
-    Default: "main"
+    Default: "front-end"
 
-  S3GHToken:
+  FrontEndGHToken:
     Type: String
     Default: ""
 
-  S3GHUser:
+  FrontEndGHUser:
     Type: String
     Default: "gloriahwoang"
 
-  LFGHRepo:
+  LambdasGHRepo:
     Type: String
     Default: "OMGITSPHOTOS"
 
-  LFGHBranch:
+  LambdasGHBranch:
     Type: String
-    Default: "master"
+    Default: "main"
 
-  LFGHToken:
+  LambdasGHToken:
     Type: String
     Default: ""
 
-  LFGHUser:
+  LambdasGHUser:
     Type: String
     Default: "gloriahwoang"
 

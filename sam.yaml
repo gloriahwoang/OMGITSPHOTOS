@@ -6,7 +6,7 @@ Resources:
     Type: AWS::S3::Bucket
     Properties:
       BucketName: asm2
-  LF1-indexPhotos:
+  LF1indexPhotos:
     Type: 'AWS::Serverless::Function'
     Properties:
       FunctionName: LF1-indexPhotos
@@ -30,7 +30,7 @@ Resources:
       Environment:
         Variables:
           REGION: us-east-1
-  LF2-searchPhotos:
+  LF2searchPhotos:
     Type: 'AWS::Serverless::Function'
     Properties:
       FunctionName: LF2-Search-Photos

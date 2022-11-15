@@ -308,7 +308,7 @@ Resources:
                 Owner: !Ref FrontEndGHUser
                 Branch: !Ref FrontEndGHBranch
                 OAuthToken: !Ref FrontEndGHToken
-                PollForSourceChanges: false
+                PollForSourceChanges: true
               OutputArtifacts:
                 - Name: SourceArtifact
               RunOrder: 1

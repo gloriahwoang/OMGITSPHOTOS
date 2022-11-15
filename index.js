@@ -61,7 +61,8 @@ function searchPhotos(searchText) {
     document.getElementById('photos_search_results').innerHTML = "<h4 style=\"text-align:center\">";
 
     var params = {
-        'q' : searchText
+        'q' : searchText,
+        "x-api-key": "VIRB4zzaE55DUa54GoBTB2R0PkhP3Ly77WahWThj"
         // "Access-Control-Allow-Origin": "*"
     };
 
@@ -137,6 +138,7 @@ function uploadPhoto() {
             "photo": 'asm2',
             "Content-Type": file.type,
             "x-amz-meta-customLabels": custom_labels.value
+           
         };
         var additionalParams = {
             
